@@ -1,0 +1,349 @@
+/* =========================================
+   TRIỂN LÃM 12 ANH HÙNG AMPHOREUS
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: #f5f0e6;
+}
+
+/* =========================================
+   KHUNG PHÒNG TRIỂN LÃM
+========================================= */
+
+.characters {
+    width: 100%;
+    padding: 70px 5%;
+    background: #f5f0e6;
+}
+
+/* =========================================
+   TIÊU ĐỀ PHÒNG TRIỂN LÃM
+========================================= */
+
+.section-title {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 45px 20px 35px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.95);
+    border-top: 2px solid #d9b968;
+    border-bottom: 2px solid #d9b968;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    animation: titleReveal 1.2s ease;
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Họa tiết hai bên */
+.section-title::before,
+.section-title::after {
+    content: "✧";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d9b968;
+    font-size: 35px;
+    text-shadow: 0 0 15px #d9b968;
+}
+
+.section-title::before {
+    left: 18px;
+}
+
+.section-title::after {
+    right: 18px;
+}
+
+/* Dòng chữ phía trên */
+.title-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.title-ornament p {
+    margin: 0;
+    color: #ffe6a3;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-shadow: 0 0 10px rgba(255, 214, 130, 0.7);
+}
+
+.title-ornament span {
+    color: #fff0bd;
+    font-size: 19px;
+    text-shadow: 0 0 12px #e8bd65;
+}
+
+/* Tiêu đề chính */
+.section-title h2 {
+    margin: 0;
+    color: #fff0bd;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-shadow:
+        0 2px 3px #000,
+        0 0 10px rgba(255, 210, 120, 0.9),
+        0 0 25px rgba(255, 190, 80, 0.55);
+}
+
+/* Đường trang trí */
+.title-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px auto;
+}
+
+.title-decoration span {
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d9b968);
+}
+
+.title-decoration span:last-child {
+    transform: rotate(180deg);
+}
+
+.title-decoration i {
+    color: #fff0bd;
+    font-size: 22px;
+    font-style: normal;
+    text-shadow: 0 0 15px #e8bd65;
+}
+
+/* Slogan */
+.title-slogan {
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.95),
+        0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+/* Dòng chữ cuối */
+.title-bottom {
+    color: #f5d58c;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px rgba(255, 205, 110, 0.6);
+}
+
+/* =========================================
+   MÔ TẢ
+========================================= */
+
+.exhibition-description {
+    max-width: 650px;
+    margin: 0 auto 50px;
+    color: #4a3f2a;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* =========================================
+   DANH SÁCH NHÂN VẬT
+========================================= */
+
+.character-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.character-card {
+    width: 100%;
+    background: rgba(12, 17, 38, 0.9);
+    border: 1px solid rgba(217, 185, 104, 0.65);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffe3a0;
+    box-shadow: 0 5px 25px rgba(231, 199, 123, 0.25);
+}
+
+.character-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.character-card h3 {
+    margin: 15px 10px 8px;
+    color: #f3d58b;
+    font-size: 20px;
+}
+
+.character-card p {
+    margin: 0;
+    padding: 0 10px 15px;
+    color: #eee5d1;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   PHẦN LIÊN HỆ
+========================================= */
+
+#lien-he {
+    padding: 40px 6px;
+    background: rgba(5, 8, 20, 0.95);
+    border-top: 1px solid rgba(217, 185, 104, 0.4);
+    border-bottom: 1px solid rgba(217, 185, 104, 0.4);
+}
+
+#lien-he .container {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#lien-he h2 {
+    margin: 0 0 35px;
+    color: #f3d58b;
+    font-size: 32px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(217, 185, 104, 0.35);
+}
+
+#lien-he .contact {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+#lien-he .contact li {
+    margin-bottom: 12px;
+    padding: 15px 25px;
+    background: rgba(15, 20, 40, 0.85);
+    border: 1px solid rgba(217, 185, 104, 0.35);
+    border-radius: 8px;
+    color: #eee5d1;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+#lien-he .contact li:last-child {
+    margin-bottom: 0;
+}
+
+#lien-he .contact li:hover {
+    transform: translateY(-4px);
+    border-color: #e8c978;
+    background: rgba(25, 30, 52, 0.95);
+    box-shadow: 0 0 15px rgba(217, 185, 104, 0.15);
+}
+
+#lien-he .contact strong {
+    margin-right: 8px;
+    color: #f3d58b;
+    letter-spacing: 1px;
+}
+
+#lien-he .contact a {
+    color: #e8d4a0;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+#lien-he .contact a:hover {
+    color: #fff4ce;
+    text-shadow: 0 0 10px rgba(243, 213, 139, 0.5);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    width: 90%;
+    max-width: 900px;
+    margin: 15px auto;
+    padding: 8px 10px;
+    background: #080b18;
+    border: 1px solid #b99a55;
+    border-radius: 8px;
+    text-align: center;
+    color: #e8d4a0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+    .character-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .character-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title::before,
+    .section-title::after {
+        display: none;
+    }
+
+    .title-ornament p {
+        letter-spacing: 3px;
+    }
+
+    .title-decoration span {
+        width: 60px;
+    }
+
+    #lien-he .contact li {
+        padding: 12px 15px;
+        font-size: 14px;
+        word-break: break-all;
+    }
+}
